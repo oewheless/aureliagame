@@ -1,0 +1,133 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Aurelia";
+}
+
+<!-- Inventory Panel (Global) -->
+<div id="inventory-panel" class="side-panel hidden">
+    <button class="close-panel-btn" id="close-inventory">✕</button>
+    <h2>Inventory</h2>
+    <div id="inventory-items">
+        <p class="empty-message">Your inventory is empty</p>
+    </div>
+</div>
+
+<!-- Relationships Panel (Global) -->
+<div id="relationships-panel" class="side-panel hidden">
+    <button class="close-panel-btn" id="close-relationships">✕</button>
+    <h2>Relationships</h2>
+    <div class="npc-card">
+        <img src="~/assets/talianeutral.png" alt="Talia" class="npc-portrait" />
+        <p class="npc-name">Talia</p>
+        <div class="hearts">
+            <span class="heart empty">♡</span>
+            <span class="heart empty">♡</span>
+            <span class="heart empty">♡</span>
+            <span class="heart empty">♡</span>
+            <span class="heart empty">♡</span>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="screen">
+    <img src="~/assets/cloudsbackground.jpg" class="background" alt="Background" />
+    <h1 class="logo">AURELIA</h1>
+    <p class="start-text">Press Any Button to Start</p>
+    <button id="load-game-btn" class="load-game-btn hidden">Load Saved Game</button>
+</div>
+
+<!-- Opening Form -->
+<div id="opening-form" class="screen hidden">
+    <div class="form-container">
+        <p class="prompt">Oh, good, you're awake. Tell me, do you remember anything about yourself? A name, perhaps?</p>
+        <input type="text" id="player-name" placeholder="Enter your name" />
+        <button id="submit-name">Continue</button>
+    </div>
+</div>
+
+<!-- Dialogue Scene -->
+<div id="dialogue-scene" class="screen hidden">
+    <img id="npc-image" src="~/assets/talianeutral.png" class="npc" alt="NPC" />
+    <p id="dialogue-text"></p>
+    <div id="options" class="options"></div>
+</div>
+
+<!-- Woods Exploration Scene -->
+<div id="woods-scene" class="screen hidden">
+    <img src="~/assets/woods.png" class="background fade-in" alt="Woods Background" />
+    
+    <!-- Top Left Menu Button -->
+    <div class="top-left-menu">
+        <button id="menu-btn" class="icon-btn">☰</button>
+    </div>
+    
+    <!-- Top Right Icons -->
+    <div class="top-icons">
+        <button id="inventory-btn" class="icon-btn"><img src="~/assets/inventory-icon.png" alt="Inventory" class="icon-image" /></button>
+        <button id="relationships-btn" class="icon-btn"><img src="~/assets/heart-icon.png" alt="Relationships" class="icon-image" /></button>
+    </div>
+    
+    <!-- Talia on the left -->
+    <img id="woods-npc-image" src="~/assets/talianeutral.png" class="npc-left" alt="Talia" />
+    
+    <!-- Dialogue Box -->
+    <div id="woods-dialogue-box" class="dialogue-box">
+        <p id="woods-npc-name" class="npc-speaker-name">Talia</p>
+        <p id="woods-dialogue-text"></p>
+    </div>
+    
+    <!-- Options -->
+    <div id="woods-options" class="woods-options"></div>
+</div>
+
+<!-- Travel Scene -->
+<div id="travel-scene" class="screen hidden">
+    <img src="~/assets/travel.png" class="background" alt="Travel Background" />
+    
+    <!-- Top Left Menu Button -->
+    <div class="top-left-menu">
+        <button id="travel-menu-btn" class="icon-btn">☰</button>
+    </div>
+    
+    <!-- Top Right Icons -->
+    <div class="top-icons">
+        <button id="travel-inventory-btn" class="icon-btn"><img src="~/assets/inventory-icon.png" alt="Inventory" class="icon-image" /></button>
+        <button id="travel-relationships-btn" class="icon-btn"><img src="~/assets/heart-icon.png" alt="Relationships" class="icon-image" /></button>
+    </div>
+    
+    <!-- Talia on the left -->
+    <img id="travel-npc-image" src="~/assets/talianeutral.png" class="npc-left" alt="Talia" />
+    
+    <!-- Dialogue Box -->
+    <div id="travel-dialogue-box" class="dialogue-box">
+        <p id="travel-npc-name" class="npc-speaker-name">Talia</p>
+        <p id="travel-dialogue-text"></p>
+    </div>
+    
+    <!-- Options -->
+    <div id="travel-options" class="travel-options"></div>
+</div>
+
+<!-- Cave Scene -->
+<div id="cave-scene" class="screen hidden">
+    <img src="~/assets/cave.png" class="background" alt="Cave Background" />
+    
+    <!-- Top Left Menu Button -->
+    <div class="top-left-menu">
+        <button id="cave-menu-btn" class="icon-btn">☰</button>
+    </div>
+    
+    <!-- Top Right Icons -->
+    <div class="top-icons">
+        <button id="cave-inventory-btn" class="icon-btn"><img src="~/assets/inventory-icon.png" alt="Inventory" class="icon-image" /></button>
+        <button id="cave-relationships-btn" class="icon-btn"><img src="~/assets/heart-icon.png" alt="Relationships" class="icon-image" /></button>
+    </div>
+    
+    <!-- Cave Dialogue Box -->
+    <div id="cave-dialogue-box" class="cave-dialogue-box">
+        <p id="cave-dialogue-text"></p>
+        <div id="cave-options" class="cave-options"></div>
+    </div>
+</div>

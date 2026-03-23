@@ -1,0 +1,24 @@
+﻿@* Pages/Shared/_Layout.cshtml *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Aurelia</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    @RenderBody()
+
+    <!-- Site JS -->
+    <script src="~/js/game.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
